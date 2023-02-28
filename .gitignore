@@ -4,3 +4,4 @@ out
 target/*
 logs/*
 **/logs/
+/reports/
