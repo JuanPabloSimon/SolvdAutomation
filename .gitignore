@@ -5,3 +5,6 @@ target/*
 logs/*
 **/logs/
 /reports/
+/.classpath
+/.project
+/.settings/
