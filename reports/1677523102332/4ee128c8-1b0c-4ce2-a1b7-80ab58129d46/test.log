@@ -1,0 +1,4 @@
+[2023-02-27 06:38:26] [1] [WARN] Reporting disabled: using no op test run registrar
+[2023-02-27 06:38:26] [1] [INFO] TEST [proyect-carina - helloWorld] STARTED at [15:38:26 2023-02-27]
+[2023-02-27 06:38:26] [1] [INFO] Hello World!
+[2023-02-27 06:38:26] [1] [INFO] TEST [proyect-carina - helloWorld] PASSED at [15:38:26 2023-02-27]

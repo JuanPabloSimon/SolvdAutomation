@@ -1,0 +1,28 @@
+[2023-02-28 12:28:29] [1] [INFO] 
+============= Test configuration =============
+url=https://www.gsmarena.com
+env=DEMO
+auto_screenshot=true
+project_report_directory=./reports
+max_screen_history=10
+localization_encoding=UTF-8
+language=en_US
+selenium_url=
+
+------------- Driver capabilities -----------
+capabilities.providerOptions=options
+================================================
+
+[2023-02-28 12:28:29] [1] [WARN] Reporting disabled: using no op test run registrar
+[2023-02-28 12:28:35] [1] [INFO] Reflections took 5843 ms to scan 23 urls, producing 3473 keys and 17815 values 
+[2023-02-28 12:28:36] [1] [INFO] [TestNG] Running:
+  C:\Users\Juan Pablo\AppData\Local\JetBrains\IdeaIC2022.3\temp-testng-customsuite.xml
+
+[2023-02-28 12:28:36] [1] [INFO] Set thread-count=1
+[2023-02-28 12:28:36] [1] [INFO] Set data-provider-thread-count=1
+[2023-02-28 12:28:36] [1] [INFO] CARINA_CORE_VERSION: 8.0.4
+[2023-02-28 12:28:53] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2023-02-28 12:28:53] [1] [INFO] RESULT #1: TEST [proyect-carina - testCreateUser] PASS [log=file://C:\Dev\Proyectos\proyect-carina\.\reports\1677544109167/d9e8dce0-5d88-4914-a1f8-e9ee3ab9e4d0/test.log]
+[2023-02-28 12:28:53] [1] [INFO] RESULT #2: TEST [proyect-carina - testCreateUserMissingSomeFields] PASS [log=file://C:\Dev\Proyectos\proyect-carina\.\reports\1677544109167/ed0edf51-057e-4225-9831-97620d5e8581/test.log]
+[2023-02-28 12:28:53] [1] [INFO] RESULT #3: TEST [proyect-carina - testDeleteUsers] PASS [log=file://C:\Dev\Proyectos\proyect-carina\.\reports\1677544109167/2fc2f125-236b-4595-9feb-29460b5eb37b/test.log]
+[2023-02-28 12:28:53] [1] [INFO] RESULT #4: TEST [proyect-carina - testGetUsers] PASS [log=file://C:\Dev\Proyectos\proyect-carina\.\reports\1677544109167/6d59db95-1d1e-4c05-ac2d-8c9ea6d59c86/test.log]
