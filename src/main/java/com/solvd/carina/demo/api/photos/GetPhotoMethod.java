@@ -7,11 +7,9 @@ import com.qaprosoft.carina.core.foundation.api.annotation.SuccessfulHttpStatus;
 import com.qaprosoft.carina.core.foundation.api.http.HttpMethodType;
 import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 
-@Endpoint(url = "https://jsonplaceholder.typicode.com/photos", methodType = HttpMethodType.GET)
+@Endpoint(url = "${config.env.base_url}/photos?albumId=1", methodType = HttpMethodType.GET)
 @ResponseTemplatePath(path = "api/photos/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class GetPhotoMethod extends AbstractApiMethodV2 {
-    public void GetPhotosMethods() {
-        // replaceUrlPlaceholder("base_url", Configuration.getEnvArg("api_url"));
-    }
+
 }
