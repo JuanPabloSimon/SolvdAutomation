@@ -4,6 +4,6 @@
     "id": 5,
     <#if title??>"title": "${title}",</#if>
     <#if url??>"url": "${url}",</#if>
-    "thumbnailUrl": "https://via.placeholder.com/150/92c95"
+    <#if thumbnailUrl??>"thumbnailUrl": "${thumbnailUrl}"</#if>
   }
 ]
