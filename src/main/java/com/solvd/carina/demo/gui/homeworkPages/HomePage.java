@@ -71,4 +71,8 @@ public class HomePage extends AbstractPage {
         navBar.getCartLink().click();
         return new CartPage(driver);
     }
+
+    public NavBar getNavBar() {
+        return this.navBar;
+    }
 }

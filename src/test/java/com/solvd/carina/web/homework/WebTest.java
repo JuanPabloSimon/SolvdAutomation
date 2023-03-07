@@ -61,6 +61,7 @@ public class WebTest implements IAbstractTest {
         loginPage.fillInputs(UserEnum.STANDARD);
         HomePage page = loginPage.clickLoginSuccess();
         page.clickAddToCart(4);
+        Assert.assertTrue(page.getNavBar().productWasAdded());
     }
 
     @Test
