@@ -6,6 +6,7 @@ import com.solvd.carina.demo.utils.UserEnum;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class WebTest implements IAbstractTest {
@@ -34,7 +35,7 @@ public class WebTest implements IAbstractTest {
     }
 
     @Test
-    public void testLoginProblemUser() throws InterruptedException {
+    public void testLoginProblemUser() {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
         loginPage.assertPageOpened();
@@ -43,25 +44,37 @@ public class WebTest implements IAbstractTest {
         Assert.assertFalse(page.areResourcesLoaded());
     }
 
-    @Test
-    public void testPictureLinkClick() throws InterruptedException {
+    @Test(dataProvider = "DPN°1")
+    public void testPictureLinkClick(String TUID, int a) {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
         HomePage page = loginPage.clickLoginSuccess();
-        page.clickImage(2);
+        page.clickImage(a);
     }
 
-    @Test
-    public void testAddToCartButton() {
+    @Test(dataProvider = "DPN°1")
+    public void testAddToCartButton(String TUID, int a) {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
         HomePage page = loginPage.clickLoginSuccess();
-        page.clickAddToCart(4);
+        page.clickAddToCart(a);
         Assert.assertTrue(page.getNavBar().productWasAdded());
+    }
+
+    @DataProvider(parallel = false, name = "DPN°1")
+    public static Object[][] dataProvider() {
+        return new Object[][]{
+                {"TUID: Data_1", 0},
+                {"TUID: Data_2", 1},
+                {"TUID: Data_3", 2},
+                {"TUID: Data_4", 3},
+                {"TUID: Data_5", 4},
+                {"TUID: Data_6", 5}
+        };
     }
 
     @Test

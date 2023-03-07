@@ -3,6 +3,7 @@ package com.solvd.carina.demo.gui.homeworkPages;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.PageOpeningStrategy;
 import com.qaprosoft.carina.core.gui.AbstractPage;
+import com.solvd.carina.demo.gui.homewokComponents.NavBar;
 import com.zebrunner.carina.utils.R;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,9 @@ public class CheckOutPage extends AbstractPage {
 
     @FindBy(id = "continue")
     private ExtendedWebElement continueButton;
+
+    @FindBy(css = "div.primary_header")
+    private NavBar navBar;
 
     public CheckOutPage(WebDriver webDriver) {
         super(webDriver);
