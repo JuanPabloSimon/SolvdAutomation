@@ -19,7 +19,7 @@ public class WebTest implements IAbstractTest {
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
-        HomePage homePage = loginPage.clickLoginSuccess();
+        HomePage homePage = loginPage.clickLogin();
         Assert.assertTrue(homePage.isPageOpened(), "Credentials aren't Correct");
         Assert.assertTrue(homePage.areResourcesLoaded());
     }
@@ -30,8 +30,8 @@ public class WebTest implements IAbstractTest {
         loginPage.open();
         loginPage.assertPageOpened();
         loginPage.fillInputs(UserEnum.LOCKED_OUT);
-        LoginBlockedPage page = loginPage.clickLoginBlocked();
-        page.assertPageOpened();
+        loginPage.clickLogin();
+        Assert.assertTrue(loginPage.isBlockedText());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class WebTest implements IAbstractTest {
         loginPage.open();
         loginPage.assertPageOpened();
         loginPage.fillInputs(UserEnum.PROBLEM);
-        HomePage page = loginPage.clickLoginSuccess();
+        HomePage page = loginPage.clickLogin();
         Assert.assertFalse(page.areResourcesLoaded());
     }
 
@@ -50,7 +50,7 @@ public class WebTest implements IAbstractTest {
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
-        HomePage page = loginPage.clickLoginSuccess();
+        HomePage page = loginPage.clickLogin();
         page.clickImage(a);
     }
 
@@ -60,7 +60,7 @@ public class WebTest implements IAbstractTest {
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
-        HomePage page = loginPage.clickLoginSuccess();
+        HomePage page = loginPage.clickLogin();
         page.clickAddToCart(a);
         Assert.assertTrue(page.getNavBar().productWasAdded());
     }
@@ -83,7 +83,7 @@ public class WebTest implements IAbstractTest {
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
-        HomePage page = loginPage.clickLoginSuccess();
+        HomePage page = loginPage.clickLogin();
         page.clickAddToCart(2);
         synchronized (page) {
             try {

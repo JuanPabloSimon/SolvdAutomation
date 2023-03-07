@@ -32,7 +32,7 @@ public class HomePage extends AbstractPage {
     public HomePage(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
-        setUiLoadedMarker(items.get(0).getProductImage());
+        setUiLoadedMarker(productTitle);
         setPageURL("inventory.html");
     }
 

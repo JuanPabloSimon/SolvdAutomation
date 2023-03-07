@@ -22,6 +22,9 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//input[(@id='login-button')]")
     private ExtendedWebElement loginButton;
 
+    @FindBy(xpath = "//h3[text()='Epic sadface: Sorry, this user has been locked out.']")
+    private ExtendedWebElement blockedText;
+
     public LoginPage(WebDriver driver) {
         super(driver);
         setUiLoadedMarker(usernameInput);
@@ -35,14 +38,14 @@ public class LoginPage extends AbstractPage {
         }
     }
 
-    public HomePage clickLoginSuccess() {
+    public HomePage clickLogin() {
         this.loginButton.click();
         return new HomePage(driver);
     }
 
-    public LoginBlockedPage clickLoginBlocked() {
-        this.loginButton.click();
-        return new LoginBlockedPage(driver);
+
+    public boolean isBlockedText() {
+        return blockedText != null;
     }
 
 }
