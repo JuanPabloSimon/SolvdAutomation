@@ -1,9 +1,7 @@
 package com.solvd.carina.web.homework;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.solvd.carina.demo.gui.homeworkPages.HomePage;
-import com.solvd.carina.demo.gui.homeworkPages.LoginBlockedPage;
-import com.solvd.carina.demo.gui.homeworkPages.LoginPage;
+import com.solvd.carina.demo.gui.homeworkPages.*;
 import com.solvd.carina.demo.utils.UserEnum;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
@@ -66,12 +64,53 @@ public class WebTest implements IAbstractTest {
     }
 
     @Test
-    public void clickCart() { // this will be improved to another complex test
+    public void testPurchase() throws InterruptedException {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
         HomePage page = loginPage.clickLoginSuccess();
-        page.clickCart();
+        page.clickAddToCart(2);
+        synchronized (page) {
+            try {
+                page.wait(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        CartPage cartPage = page.clickCart();
+        synchronized (cartPage) {
+            try {
+                cartPage.wait(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        CheckOutPage checkOutPage = cartPage.clickCheckOut();
+        synchronized (checkOutPage) {
+            try {
+                checkOutPage.wait(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        checkOutPage.fillInputs();
+        CheckOut2Page checkOut2Page = checkOutPage.clickContinue();
+        synchronized (checkOut2Page) {
+            try {
+                checkOut2Page.wait(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        CheckOutCompletePage completePage = checkOut2Page.clickFinish();
+        completePage.assertPageOpened();
+        synchronized (completePage) {
+            try {
+                completePage.wait(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

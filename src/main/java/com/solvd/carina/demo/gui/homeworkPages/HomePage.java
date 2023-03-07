@@ -67,7 +67,8 @@ public class HomePage extends AbstractPage {
             container.getAddElementButton().click();
     }
 
-    public void clickCart() {
+    public CartPage clickCart() {
         navBar.getCartLink().click();
+        return new CartPage(driver);
     }
 }
