@@ -51,7 +51,8 @@ public class WebTest implements IAbstractTest {
         Assert.assertTrue(loginPage.isPageOpened(), "Home page is not opened!");
         loginPage.fillInputs(UserEnum.STANDARD);
         HomePage page = loginPage.clickLogin();
-        page.clickImage(a);
+        ElementPage elementPage = page.clickImage(a);
+        elementPage.assertPageOpened();
     }
 
     @Test(dataProvider = "DPN°1")
