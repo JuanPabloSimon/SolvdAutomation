@@ -49,9 +49,9 @@ public class WebTest implements IAbstractTest {
         elementPage.assertPageOpened();
     }
 
-    // not working
+
     @Test
-    public void openHomePageWithCookies() {
+    public void openHomePageWithCookies() { // not working, TO BE FIXED.
         HomePage homePage = new HomePage(getDriver());
         homePage.addCookie(new Cookie("session-username", "standard_user", "www.saucedemo.com", "/", DateUtils.addHours(new Date(), 2)));
         homePage.open();
