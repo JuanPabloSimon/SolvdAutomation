@@ -1,4 +1,4 @@
-package com.solvd.carina.demo.gui.homeworkPages;
+package com.solvd.carina.demo.gui.homework.pages;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
@@ -44,8 +44,8 @@ public class LoginPage extends AbstractPage {
     }
 
 
-    public boolean isBlockedText() {
-        return blockedText != null;
+    public boolean isBlockedTextPresent() {
+        return blockedText.isElementPresent();
     }
 
 }

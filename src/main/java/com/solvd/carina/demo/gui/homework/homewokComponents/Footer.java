@@ -1,4 +1,4 @@
-package com.solvd.carina.demo.gui.homewokComponents;
+package com.solvd.carina.demo.gui.homework.homewokComponents;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractUIObject;

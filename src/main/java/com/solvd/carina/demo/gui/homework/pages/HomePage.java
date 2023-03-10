@@ -1,11 +1,11 @@
-package com.solvd.carina.demo.gui.homeworkPages;
+package com.solvd.carina.demo.gui.homework.pages;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.PageOpeningStrategy;
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.solvd.carina.demo.gui.homewokComponents.Footer;
-import com.solvd.carina.demo.gui.homewokComponents.InventoryItem;
-import com.solvd.carina.demo.gui.homewokComponents.NavBar;
+import com.solvd.carina.demo.gui.homework.homewokComponents.Footer;
+import com.solvd.carina.demo.gui.homework.homewokComponents.InventoryItem;
+import com.solvd.carina.demo.gui.homework.homewokComponents.NavBar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
@@ -36,10 +36,10 @@ public class HomePage extends AbstractPage {
         setPageURL("inventory.html");
     }
 
-    public ElementPage clickImage(int id) {
+    public ElementPage clickImage(int id, String title) {
         InventoryItem container = null;
         for (InventoryItem element : items) {
-            if (element.getProductLink().getAttribute("id").contains(String.valueOf(id)))
+            if (element.getItemTitle().getText().equalsIgnoreCase(title))
                 container = element;
         }
         if (container != null)
@@ -57,10 +57,10 @@ public class HomePage extends AbstractPage {
         return true;
     }
 
-    public void clickAddToCart(int id) {
+    public void clickAddToCart(String title) {
         InventoryItem container = null;
         for (InventoryItem item : items) {
-            if (item.getProductLink().getAttribute("id").contains(String.valueOf(id)))
+            if (item.getItemTitle().getText().equalsIgnoreCase(title))
                 container = item;
         }
         if (container != null)
