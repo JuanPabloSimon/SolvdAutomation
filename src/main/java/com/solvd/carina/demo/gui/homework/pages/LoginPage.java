@@ -31,10 +31,10 @@ public class LoginPage extends AbstractPage {
         setPageAbsoluteURL(R.CONFIG.get(Configuration.Parameter.URL.getKey()));
     }
 
-    public void fillInputs(UserEnum user) {
+    public void fillInputs(UserEnum user, String password) {
         if (user != null) {
             this.usernameInput.type(R.TESTDATA.get(user.getCredential()));
-            this.passwordInput.type(R.TESTDATA.get("password"));
+            this.passwordInput.type(password);
         }
     }
 

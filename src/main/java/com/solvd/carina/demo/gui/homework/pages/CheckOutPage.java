@@ -4,7 +4,6 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.PageOpeningStrategy;
 import com.qaprosoft.carina.core.gui.AbstractPage;
 import com.solvd.carina.demo.gui.homework.homewokComponents.NavBar;
-import com.zebrunner.carina.utils.R;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -31,10 +30,10 @@ public class CheckOutPage extends AbstractPage {
         setPageURL("checkout-step-one.html");
     }
 
-    public void fillInputs() {
-        this.nameInput.type(R.TESTDATA.get("firstName"));
-        this.lastnameInput.type(R.TESTDATA.get("lastName"));
-        this.postalCode.type(R.TESTDATA.get("postalCode"));
+    public void fillInputs(String firstname, String lastname, String postalCode) {
+        this.nameInput.type(firstname);
+        this.lastnameInput.type(lastname);
+        this.postalCode.type(postalCode);
     }
 
     public CheckOut2Page clickContinue() {

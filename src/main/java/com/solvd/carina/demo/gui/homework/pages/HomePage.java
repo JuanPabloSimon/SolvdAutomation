@@ -36,7 +36,7 @@ public class HomePage extends AbstractPage {
         setPageURL("inventory.html");
     }
 
-    public ElementPage clickImage(int id, String title) {
+    public ElementPage clickImage(String title) {
         InventoryItem container = null;
         for (InventoryItem element : items) {
             if (element.getItemTitle().getText().equalsIgnoreCase(title))
@@ -44,7 +44,7 @@ public class HomePage extends AbstractPage {
         }
         if (container != null)
             container.getProductLink().click();
-        return new ElementPage(driver, id);
+        return new ElementPage(driver);
     }
 
     public boolean areResourcesLoaded() {

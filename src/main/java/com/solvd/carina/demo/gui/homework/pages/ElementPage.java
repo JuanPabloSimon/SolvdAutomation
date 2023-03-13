@@ -11,13 +11,16 @@ public class ElementPage extends AbstractPage {
 
     @FindBy(css = "div.inventory_details_name")
     private ExtendedWebElement productTitle;
-
     @FindBy(css = "div.primary_header")
     private NavBar navBar;
 
-    public ElementPage(WebDriver driver, int id) {
+    public ElementPage(WebDriver driver) {
         super(driver);
-        setPageOpeningStrategy(PageOpeningStrategy.BY_URL);
-        setPageURL(String.format("inventory-item.html?id=%d", id));
+        setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
+        setUiLoadedMarker(productTitle);
+    }
+
+    public boolean isCorrectPageOpened(String title) {
+        return productTitle.getText().equalsIgnoreCase(title);
     }
 }
