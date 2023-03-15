@@ -9,7 +9,13 @@ public abstract class HomePageBase extends AbstractPage {
         super(webDriver);
     }
 
-    public abstract void fillSearchInput();
+    public abstract void fillSearchInput(String search);
 
     public abstract void clickEnter();
+
+    public abstract void clickMenu();
+
+    public abstract SettingsPageBase clickSettings();
+
+    public abstract IncognitoPageBase clickIncognitoTab();
 }
