@@ -1,10 +1,10 @@
 package com.solvd.carina.demo.mobile.gui.pages.android;
 
-import com.zebrunner.carina.utils.factory.DeviceType;
-import com.zebrunner.carina.utils.factory.DeviceType.Type;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.solvd.carina.demo.mobile.gui.pages.common.LoginPageBase;
 import com.solvd.carina.demo.mobile.gui.pages.common.WelcomePageBase;
+import com.zebrunner.carina.utils.factory.DeviceType;
+import com.zebrunner.carina.utils.factory.DeviceType.Type;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 

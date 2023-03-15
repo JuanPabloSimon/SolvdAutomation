@@ -1,22 +1,15 @@
 package com.solvd.carina.demo;
 
+import com.qaprosoft.carina.core.foundation.IAbstractTest;
+import com.solvd.carina.demo.mobile.gui.pages.common.*;
+import com.solvd.carina.demo.utils.MobileContextUtils;
+import com.solvd.carina.demo.utils.MobileContextUtils.View;
 import com.zebrunner.agent.core.annotation.TestLabel;
+import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
+import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
-import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
-
-import com.solvd.carina.demo.mobile.gui.pages.common.CarinaDescriptionPageBase;
-import com.solvd.carina.demo.mobile.gui.pages.common.ContactUsPageBase;
-import com.solvd.carina.demo.mobile.gui.pages.common.LoginPageBase;
-import com.solvd.carina.demo.mobile.gui.pages.common.UIElementsPageBase;
-import com.solvd.carina.demo.mobile.gui.pages.common.WebViewPageBase;
-import com.solvd.carina.demo.mobile.gui.pages.common.WelcomePageBase;
-import com.solvd.carina.demo.utils.MobileContextUtils;
-import com.solvd.carina.demo.utils.MobileContextUtils.View;
 
 
 public class MobileSampleTest implements IAbstractTest, IMobileUtils {
@@ -39,7 +32,7 @@ public class MobileSampleTest implements IAbstractTest, IMobileUtils {
         Assert.assertTrue(carinaDescriptionPage.isPageOpened(), "Carina description page isn't opened");
     }
 
-	@Test()
+    @Test()
     @MethodOwner(owner = "qpsdemo")
     @TestLabel(name = "feature", value = {"mobile", "regression"})
     public void testWebView() {
