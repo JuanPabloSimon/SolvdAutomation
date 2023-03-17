@@ -19,7 +19,6 @@ public class HomePage extends AbstractPage {
 
     @FindBy(xpath = "//span[text()='Products']")
     private ExtendedWebElement productTitle;
-
     @FindBy(css = "div.inventory_item")
     private List<InventoryItem> items;
 

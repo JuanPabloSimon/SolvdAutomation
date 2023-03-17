@@ -27,7 +27,6 @@ public class ApiTestPhotos implements IAbstractTest {
     @Test
     public void testPostPhoto() {
         LOGGER.info("TEST POST PHOTO");
-        setCases("48659652");
         PostPhotoMethods api = new PostPhotoMethods();
         api.callAPI();
         api.validateResponse();
@@ -46,7 +45,6 @@ public class ApiTestPhotos implements IAbstractTest {
     @Test
     public void testPatchPhoto() {
         LOGGER.info("TEST PATCH");
-        setCases("48659652");
         PostPhotoMethods api = new PostPhotoMethods();
         Response r = api.callAPIExpectSuccess();
         api.validateResponse();
