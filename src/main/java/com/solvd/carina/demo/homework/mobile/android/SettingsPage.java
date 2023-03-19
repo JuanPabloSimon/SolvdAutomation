@@ -44,6 +44,7 @@ public class SettingsPage extends SettingsPageBase {
     @Override
     public boolean checkSelected(EngineType engine) {
         EngineItem engineItem = engines.stream().filter(e -> e.checkElementName(engine.getName())).findFirst().orElse(null);
+        assert engineItem != null : "The engine selected is not available";
         return engineItem.isChecked();
     }
 
